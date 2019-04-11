@@ -21,12 +21,15 @@ import {
   MatTooltipModule,
   MatSelectModule
 } from '@angular/material';
+import {ListaUtentiComponent} from "../../lista-utenti/lista-utenti.component";
+import {AggiungiutenteComponent} from "../../aggiungiutente/aggiungiutente.component";
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatRippleModule,
     MatFormFieldModule,
@@ -43,7 +46,9 @@ import {
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
-    GestionevideoComponent
+    GestionevideoComponent,
+    ListaUtentiComponent,
+    AggiungiutenteComponent
   ]
 })
 
