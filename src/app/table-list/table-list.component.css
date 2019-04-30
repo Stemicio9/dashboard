@@ -1,0 +1,18 @@
+.material-icons:hover
+{cursor:pointer;}
+
+.input-group-text
+{
+    background-color: #d6d8db;
+}
+
+
+.input-group > .custom-file
+{
+    background: #dee2e6;
+
+}
+
+
+.input-group>.custom-file:hover
+{cursor:pointer;}

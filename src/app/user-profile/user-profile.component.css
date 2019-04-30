@@ -1,0 +1,19 @@
+#impostazioni_utente
+{padding:5px 10px 5px 10px;}
+
+.header-impostazioni h3
+{ color: #0c7cd5;
+    font-weight: bold;
+}
+
+.header-impostazioni
+{
+    padding: 10px 20px 10px 20px;
+    color: #0c7cd5;
+}
+
+.body-impostazioni , .footer-impostazioni
+{
+    padding: 10px 20px 10px 20px;
+}
+

@@ -23,6 +23,8 @@ import {
 } from '@angular/material';
 import {ListaUtentiComponent} from "../../lista-utenti/lista-utenti.component";
 import {AggiungiutenteComponent} from "../../aggiungiutente/aggiungiutente.component";
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
 
 @NgModule({
   imports: [
@@ -36,6 +38,7 @@ import {AggiungiutenteComponent} from "../../aggiungiutente/aggiungiutente.compo
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    DragDropModule
   ],
   declarations: [
     DashboardComponent,

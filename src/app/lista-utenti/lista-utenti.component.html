@@ -1,24 +1,130 @@
-<div class="col-md-12 user-container">
-  <h2 style="margin: auto"> User Details</h2>
-  <button class="btn btn-danger" style="width:100px" (click)="addUser()"> Add User</button>
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th class="hidden">Id</th>
-      <th>FirstName</th>
-      <th>LastName</th>
-      <th>UserName</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let user of users">
-      <td class="hidden">{{user.id}}</td>
-      <td>{{user.firstName}}</td>
-      <td>{{user.lastName}}</td>
-      <td>{{user.username}}</td>
-      <td><button class="btn btn-success" (click)="deleteUser(user)"> Delete</button>
-        <button class="btn btn-success" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button></td>
-    </tr>
-    </tbody>
-  </table>
-</div>
+
+<section id="gruppisection">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4 bar">
+      <div class="headergruppi">
+        <div class="titolog">
+          <h5 class="gruppititolo">Bar</h5>
+        </div><!-- titolog -->
+      <div class="icona">
+        <i class="material-icons">local_cafe</i>
+      </div><!-- icona -->
+      </div><!-- headergruppi -->
+
+      <table class="table">
+        <thead>
+        <tr class="titoloattivita">
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Indirizzo</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Nome attività</td>
+          <td>Via Rossini - Rende - CS</td>
+
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Nome attività</td>
+          <td>Via Rossini - Rende - CS</td>
+
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Nome attività</td>
+          <td>Via Rossini - Rende - CS</td>
+
+        </tr>
+        </tbody>
+      </table>
+    </div><!-- col-sm-4 -->
+    <div class="col-sm-4 ristoranti">
+      <div class="headergruppi">
+        <div class="titolog">
+          <h5 class="gruppititolo">Ristoranti</h5>
+        </div><!-- titolog -->
+        <div class="icona">
+          <i class="material-icons">restaurant</i>
+        </div><!-- icona -->
+      </div><!-- headergruppi -->
+      <table class="table">
+        <thead>
+        <tr class="titoloattivita">
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Indirizzo</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Nome attività</td>
+          <td>Via Rossini - Rende - CS</td>
+
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Nome attività</td>
+          <td>Via Rossini - Rende - CS</td>
+
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Nome attività</td>
+          <td>Via Rossini - Rende - CS</td>
+
+        </tr>
+        </tbody>
+      </table>
+    </div><!-- col-sm-4 -->
+    <div class="col-sm-4 fastfood">
+      <div class="headergruppi">
+        <div class="titolog">
+          <h5 class="gruppititolo">Fast food</h5>
+        </div><!-- titolog -->
+        <div class="icona">
+          <i class="material-icons">fastfood</i>
+        </div><!-- icona -->
+      </div><!-- headergruppi -->
+      <table class="table">
+        <thead>
+        <tr class="titoloattivita">
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Indirizzo</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Nome attività</td>
+          <td>Via Rossini - Rende - CS</td>
+
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Nome attività</td>
+          <td>Via Rossini - Rende - CS</td>
+
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Nome attività</td>
+          <td>Via Rossini - Rende - CS</td>
+
+        </tr>
+        </tbody>
+      </table>
+    </div><!-- col-sm-4 -->
+  </div><!-- row -->
+</div><!-- container-fluid -->
+
+</section>
+
+
+
+

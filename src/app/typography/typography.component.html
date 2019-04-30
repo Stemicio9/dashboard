@@ -1,98 +1,157 @@
-<div class="main-content">
-  <div class="container-fluid">
-    <div class="card">
-        <div class="card-header card-header-danger">
-            <h4 class="card-title">Material Dashboard Heading</h4>
-            <p class="card-category">Created using Roboto Font Family</p>
-        </div>
-        <div class="card-body">
-            <div id="typography">
-                <div class="card-title">
-                    <h2>Typography</h2>
-                </div>
-                <div class="row">
-                    <div class="tim-typo">
-                        <h1>
-                            <span class="tim-note">Header 1</span>The Life of Material Dashboard </h1>
-                    </div>
-                    <div class="tim-typo">
-                        <h2>
-                            <span class="tim-note">Header 2</span>The Life of Material Dashboard</h2>
-                    </div>
-                    <div class="tim-typo">
-                        <h3>
-                            <span class="tim-note">Header 3</span>The Life of Material Dashboard</h3>
-                    </div>
-                    <div class="tim-typo">
-                        <h4>
-                            <span class="tim-note">Header 4</span>The Life of Material Dashboard</h4>
-                    </div>
-                    <div class="tim-typo">
-                        <h5>
-                            <span class="tim-note">Header 5</span>The Life of Material Dashboard</h5>
-                    </div>
-                    <div class="tim-typo">
-                        <h6>
-                            <span class="tim-note">Header 6</span>The Life of Material Dashboard</h6>
-                    </div>
-                    <div class="tim-typo">
-                        <p>
-                            <span class="tim-note">Paragraph</span>
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Quote</span>
-                        <blockquote class="blockquote">
-                            <p>
-                                I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.
-                            </p>
-                            <small>
-                                Kanye West, Musician
-                            </small>
-                        </blockquote>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Muted Text</span>
-                        <p class="text-muted">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...
-                        </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Primary Text</span>
-                        <p class="text-primary">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Info Text</span>
-                        <p class="text-info">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Success Text</span>
-                        <p class="text-success">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Warning Text</span>
-                        <p class="text-warning">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...
-                        </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Danger Text</span>
-                        <p class="text-danger">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                    </div>
-                    <div class="tim-typo">
-                        <h2>
-                            <span class="tim-note">Small Tag</span>
-                            Header with small subtitle
-                            <br>
-                            <small>Use "small" tag for the headers</small>
-                        </h2>
-                    </div>
-                </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 add_button">
+            <i class="material-icons" style="font-size:4em; color:forestgreen;" data-toggle="modal" data-target="#modal-upload">add_circle_outline</i>
+            <div class="alert alert-success">
+                <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="material-icons">close</i>
+                </button>
+                <span> <b> Va bene. </b> File caricato correttamente.</span>
             </div>
-        </div>
-    </div>
-</div>
+
+            <div class="alert alert-danger">
+                <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="material-icons">close</i>
+                </button>
+                <span> <b> Problema. </b> Questo file non può essere aggiunto.</span>
+            </div>
+        </div><!-- col-sm-12 -->
+    </div><!-- row -->
+
+  <div class="container-fluid">
+      <div class="card-deck">
+          <div class="card">
+              <img class="card-img-top" src="assets/img/microeffortcard.png" alt="Card image cap">
+              <div class="card-feature">
+                  <ul class="list-inline list-unstyled" id="list-feature">
+                      <li> <i class="material-icons">person</i> author</li>
+
+                  </ul>
+              </div><!-- feature -->
+              <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+              </div>
+              <div class="card-add">
+
+                  <i class="material-icons" style="font-size:2em; color:red;">remove_circle_outline</i>
+              </div>
+          </div>
+          <div class="card">
+              <img class="card-img-top" src="assets/img/microeffortcard.png" alt="Card image cap">
+              <div class="card-feature">
+                  <ul class="list-inline list-unstyled" id="list-feature">
+                      <li> <i class="material-icons">person</i> author</li>
+
+                  </ul>
+              </div><!-- feature -->
+              <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+              </div>
+              <div class="card-add">
+
+                  <i class="material-icons" style="font-size:2em; color:red;">remove_circle_outline</i>
+              </div>
+          </div>
+          <div class="card">
+              <img class="card-img-top" src="assets/img/microeffortcard.png" alt="Card image cap">
+              <div class="card-feature">
+                  <ul class="list-inline list-unstyled" id="list-feature">
+                      <li> <i class="material-icons">person</i> author</li>
+
+                  </ul>
+              </div><!-- feature -->
+              <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+              </div>
+              <div class="card-add">
+
+                  <i class="material-icons" style="font-size:2em; color:red;">remove_circle_outline</i>
+              </div>
+          </div>
+          <div class="card">
+              <img class="card-img-top" src="assets/img/microeffortcard.png" alt="Card image cap">
+              <div class="card-feature">
+                  <ul class="list-inline list-unstyled" id="list-feature">
+                      <li> <i class="material-icons">person</i> author</li>
+
+                  </ul>
+              </div><!-- feature -->
+              <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+              </div>
+              <div class="card-add">
+
+                  <i class="material-icons" style="font-size:2em; color:red;">remove_circle_outline</i>
+              </div>
+          </div>
+          <div class="card">
+              <img class="card-img-top" src="assets/img/microeffortcard.png" alt="Card image cap">
+              <div class="card-feature">
+                  <ul class="list-inline list-unstyled" id="list-feature">
+                      <li> <i class="material-icons">person</i> author</li>
+
+                  </ul>
+              </div><!-- feature -->
+              <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+              </div>
+              <div class="card-add">
+
+                  <i class="material-icons" style="font-size:2em; color:red;">remove_circle_outline</i>
+              </div>
+          </div>
+
+      </div><!-- card-deck -->
+
+
+
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="modal-upload" role="dialog">
+          <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="input-group">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroupFileAddon01">Carica immagine</span>
+                      </div>
+                      <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                          <label class="custom-file-label" for="inputGroupFile01">Scegli il file</label>
+                      </div>
+                  </div>
+
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+
+
+
+  </div><!-- container-fluid -->
+</div><!-- main-content -->
+
+
+
+
+

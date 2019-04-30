@@ -1,0 +1,24 @@
+#gruppisection
+{
+    padding: 5px 10px 5px 10px;
+}
+
+h5.gruppititolo
+{
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+
+.headergruppi
+{ width: 100%;
+
+}
+
+.gruppititolo, .icona
+{
+
+    margin-right: 10px;
+    float: left;
+}
