@@ -9,32 +9,21 @@
                     <thead>
                     <tr class="titoloattivita">
                         <th scope="col">#</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Indirizzo</th>
-                        <th scope="col">Tipo attività</th>
+                        <th scope="col">Nome dispositivo</th>
+                        <th scope="col">Ultima richiesta</th>
+                        <th scope="col">Attivato</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Nome attività</td>
-                        <td>Via Rossini - Rende - CS</td>
-                        <td> <i class="material-icons">local_cafe</i></td>
+                    <tr *ngFor="let disp of listadispositivi">
+                        <th scope="row">{{disp.idDispositivo}}</th>
+                        <td>{{disp.nomeDispositivo}}</td>
+                        <td>{{disp.ultimaRichiesta}}</td>
+            <!--            <td> <i class="material-icons">local_cafe</i></td>  -->
+                        <td>{{disp.inAttesa}}</td>
 
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Nome attività</td>
-                        <td>Via Rossini - Rende - CS</td>
-                        <td>  <i class="material-icons">restaurant</i></td>
 
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Nome attività</td>
-                        <td>Via Rossini - Rende - CS</td>
-                        <td><i class="material-icons">fastfood</i></td>
-                    </tr>
                     </tbody>
                 </table>
             </div><!-- col-sm-12 -->

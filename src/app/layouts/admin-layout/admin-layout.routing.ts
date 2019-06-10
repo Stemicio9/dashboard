@@ -11,6 +11,7 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {GestionevideoComponent} from "../../gestionevideo/gestionevideo.component";
 import {ListaUtentiComponent} from "../../lista-utenti/lista-utenti.component";
 import {AggiungiutenteComponent} from "../../aggiungiutente/aggiungiutente.component";
+import {ModificasequenzaComponent} from "../../modificasequenza/modificasequenza.component";
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -64,7 +65,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'listautenti',    component: ListaUtentiComponent },
-    { path: 'aggiungiutente', component: AggiungiutenteComponent }
+    { path: 'aggiungiutente', component: AggiungiutenteComponent },
+    { path: 'modificasequenza', component: ModificasequenzaComponent}
 
 
 ];

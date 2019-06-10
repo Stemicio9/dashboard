@@ -1,15 +1,20 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12 add_button">
-            <i class="material-icons" style="font-size:4em; color:forestgreen;" data-toggle="modal" data-target="#modal-upload">add_circle_outline</i>
-            <div class="alert alert-success">
+
+
+            <input #infile style="color:forestgreen;" type="file"
+                   id="file"
+                   (change)="handleFileInput($event.target.files)">
+
+            <div class="alert alert-success" [hidden]="nascosto">
                 <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <i class="material-icons">close</i>
                 </button>
                 <span> <b> Va bene. </b> File caricato correttamente.</span>
             </div>
 
-            <div class="alert alert-danger">
+            <div class="alert alert-danger" [hidden]="messaggioerrore">
                 <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <i class="material-icons">close</i>
                 </button>
@@ -20,8 +25,8 @@
 
   <div class="container-fluid">
       <div class="card-deck">
-          <div class="card">
-              <img class="card-img-top" src="assets/img/microeffortcard.png" alt="Card image cap">
+          <div class="card" *ngFor="let vid of foto">
+              <img height="200" class="card-img-top" [src]="vid.urlTuttifile" alt="Card image cap">
               <div class="card-feature">
                   <ul class="list-inline list-unstyled" id="list-feature">
                       <li> <i class="material-icons">person</i> author</li>
@@ -29,84 +34,10 @@
                   </ul>
               </div><!-- feature -->
               <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <h5 class="card-title">{{vid.idTuttifile}}</h5>
 
               </div>
-              <div class="card-add">
-
-                  <i class="material-icons" style="font-size:2em; color:red;">remove_circle_outline</i>
-              </div>
-          </div>
-          <div class="card">
-              <img class="card-img-top" src="assets/img/microeffortcard.png" alt="Card image cap">
-              <div class="card-feature">
-                  <ul class="list-inline list-unstyled" id="list-feature">
-                      <li> <i class="material-icons">person</i> author</li>
-
-                  </ul>
-              </div><!-- feature -->
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-
-              </div>
-              <div class="card-add">
-
-                  <i class="material-icons" style="font-size:2em; color:red;">remove_circle_outline</i>
-              </div>
-          </div>
-          <div class="card">
-              <img class="card-img-top" src="assets/img/microeffortcard.png" alt="Card image cap">
-              <div class="card-feature">
-                  <ul class="list-inline list-unstyled" id="list-feature">
-                      <li> <i class="material-icons">person</i> author</li>
-
-                  </ul>
-              </div><!-- feature -->
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-
-              </div>
-              <div class="card-add">
-
-                  <i class="material-icons" style="font-size:2em; color:red;">remove_circle_outline</i>
-              </div>
-          </div>
-          <div class="card">
-              <img class="card-img-top" src="assets/img/microeffortcard.png" alt="Card image cap">
-              <div class="card-feature">
-                  <ul class="list-inline list-unstyled" id="list-feature">
-                      <li> <i class="material-icons">person</i> author</li>
-
-                  </ul>
-              </div><!-- feature -->
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-
-              </div>
-              <div class="card-add">
-
-                  <i class="material-icons" style="font-size:2em; color:red;">remove_circle_outline</i>
-              </div>
-          </div>
-          <div class="card">
-              <img class="card-img-top" src="assets/img/microeffortcard.png" alt="Card image cap">
-              <div class="card-feature">
-                  <ul class="list-inline list-unstyled" id="list-feature">
-                      <li> <i class="material-icons">person</i> author</li>
-
-                  </ul>
-              </div><!-- feature -->
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-
-              </div>
-              <div class="card-add">
-
+              <div class="card-add"  (click)="deletemedia(vid)">
                   <i class="material-icons" style="font-size:2em; color:red;">remove_circle_outline</i>
               </div>
           </div>

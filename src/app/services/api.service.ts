@@ -9,7 +9,10 @@ import {User} from "../model/user";
 export class ApiService {
 
   constructor(private http: HttpClient) { }
-  baseUrl: string = 'http://87.27.62.247/users/';
+//  baseUrl: string = 'http://87.27.62.247/users/';
+
+  baseUrl: string = 'http://192.168.1.22:8080/';
+//  baseUrl: string = 'http://localhost:8080/';
 
   login(loginPayload) {
     const headers = {

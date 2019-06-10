@@ -2,129 +2,185 @@
 <section id="gruppisection">
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-4 bar">
+    <div class="col-sm-6 bar" *ngFor="let grup of gruppi">
+
+
+     <div class="sfondocard col-sm-12 fullheight" >
+
       <div class="headergruppi">
         <div class="titolog">
-          <h5 class="gruppititolo">Bar</h5>
+          <h5 class="gruppititolo">{{grup.nomeGruppo}}</h5>
         </div><!-- titolog -->
       <div class="icona">
         <i class="material-icons">local_cafe</i>
       </div><!-- icona -->
+
       </div><!-- headergruppi -->
+
+      <div class="sottoheadergruppi">
+
+      <h5 *ngIf=grup.idGruppoSequenza class="gruppititolo">{{grup.idGruppoSequenza.nomeSequenza}}</h5>
+      <button *ngIf=grup.idGruppoSequenza (click)="modificasequenza(grup)">Modifica sequenza</button>
+        <button *ngIf=!(grup.idGruppoSequenza) (click)="modificasequenza(grup)">Aggiungi sequenza</button>
+
+      </div>
 
       <table class="table">
         <thead>
         <tr class="titoloattivita">
           <th scope="col">#</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Indirizzo</th>
+          <th scope="col">Nome dispositivo</th>
+          <th scope="col">Ultima richiesta</th>
+          <th scope="col">Azioni</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Nome attività</td>
-          <td>Via Rossini - Rende - CS</td>
-
+        <tr *ngFor="let disp of grup.dispositivi">
+          <th scope="row">{{disp.idDispositivo}}</th>
+          <td>{{disp.nomeDispositivo}}</td>
+          <td>{{disp.ultimaRichiesta}}</td>
+         <td><button (click)="rimuovidispositivodagruppo(disp,grup)">RIMUOVI</button></td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Nome attività</td>
-          <td>Via Rossini - Rende - CS</td>
 
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Nome attività</td>
-          <td>Via Rossini - Rende - CS</td>
-
-        </tr>
         </tbody>
       </table>
-    </div><!-- col-sm-4 -->
-    <div class="col-sm-4 ristoranti">
-      <div class="headergruppi">
-        <div class="titolog">
-          <h5 class="gruppititolo">Ristoranti</h5>
-        </div><!-- titolog -->
-        <div class="icona">
-          <i class="material-icons">restaurant</i>
-        </div><!-- icona -->
-      </div><!-- headergruppi -->
-      <table class="table">
-        <thead>
-        <tr class="titoloattivita">
-          <th scope="col">#</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Indirizzo</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Nome attività</td>
-          <td>Via Rossini - Rende - CS</td>
 
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Nome attività</td>
-          <td>Via Rossini - Rende - CS</td>
+       <div class="col-sm-12">
+         <button class="col-sm-12" (click)="gestiscidispositivi(grup)">GESTISCI DISPOSITIVI</button>
+       </div>
+    </div><!-- SFONDO -->
 
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Nome attività</td>
-          <td>Via Rossini - Rende - CS</td>
 
-        </tr>
-        </tbody>
-      </table>
-    </div><!-- col-sm-4 -->
-    <div class="col-sm-4 fastfood">
-      <div class="headergruppi">
-        <div class="titolog">
-          <h5 class="gruppititolo">Fast food</h5>
-        </div><!-- titolog -->
-        <div class="icona">
-          <i class="material-icons">fastfood</i>
-        </div><!-- icona -->
-      </div><!-- headergruppi -->
-      <table class="table">
-        <thead>
-        <tr class="titoloattivita">
-          <th scope="col">#</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Indirizzo</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Nome attività</td>
-          <td>Via Rossini - Rende - CS</td>
 
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Nome attività</td>
-          <td>Via Rossini - Rende - CS</td>
+    </div>  <!-- col-sm-4 -->
 
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Nome attività</td>
-          <td>Via Rossini - Rende - CS</td>
-
-        </tr>
-        </tbody>
-      </table>
-    </div><!-- col-sm-4 -->
   </div><!-- row -->
 </div><!-- container-fluid -->
 
 </section>
 
+<button type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample"
+        (click)="frame.show()" mdbWavesEffect>Aggiungi gruppo</button>
 
+
+<div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Aggiungi gruppo</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+
+        <div class="md-form mb-4">
+          <i class="fas fa-lock prefix grey-text"></i>
+          <input type="text" id="defaultForm-pass" [formControl]="loginFormModalPassword" class="form-control validate"
+                 mdbInput>
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Nome gruppo</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button mdbBtn color="default" class="waves-light" (click)="creagruppo()" mdbWavesEffect>Salva</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div mdbModal #sceltasequenza="mdbModal" class="modal fade left" id="sceltasequenza" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Aggiungi Sequenza</h4>
+      </div>
+      <div class="modal-body mx-3">
+
+        <div class="md-form mb-4" *ngFor="let seq of tuttelesequenze">
+          <div class="col-sm-12 highlight" (click)="sequenzasceltamodal(seq)">
+            <h5>
+             {{seq.nomeSequenza}}
+            </h5>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div mdbModal #gestiscidispositivimodal="mdbModal" class="modal fade left" id="gestiscidispositivi" tabindex="100" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-fluid" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Gestisci dispositivi</h4>
+      </div>
+      <div class="modal-body">
+
+
+        <div class="row">
+
+        <div class="col-sm-5">
+        <div
+                cdkDropList
+                #todoList="cdkDropList"
+                [cdkDropListData]="listadispositivi"
+                [cdkDropListConnectedTo]="[doneList]"
+                (cdkDropListDropped)="onDrop($event)">
+          <h2>Tutti i dispositivi</h2>
+          <mat-card *ngFor="let disp of listadispositivi" cdkDrag>
+            <mat-card-header>
+              <div class="col-md-12 highlight" (click)="spostadispositivoinselezionati(disp)">
+                <div class="container-fluid col-md-12">
+                  <h5>{{disp.nomeDispositivo}}</h5>
+                  <h5>{{disp.idDispositivo}}</h5>
+                </div>
+              </div>
+            </mat-card-header>
+          </mat-card>
+        </div>
+        </div>
+
+
+        <div class="col-sm-5">
+          <div id="listasequenza"
+               cdkDropList
+               #doneList="cdkDropList"
+               [cdkDropListData]="dispositiviscelti"
+               [cdkDropListConnectedTo]="todoList"
+               (cdkDropListDropped)="onDrop($event)">
+
+            <h2>Dispositivi selezionati</h2>
+            <mat-card *ngFor="let disp of dispositiviscelti" cdkDrag>
+              <mat-card-header>
+                <div class="col-md-12 highlight" (click)="rimuovidadispositiviselezionati(disp)">
+                  <div class="container-fluid col-md-12">
+                    <h5>{{disp.nomeDispositivo}}</h5>
+                    <h5>{{disp.idDispositivo}}</h5>
+                  </div>
+                </div>
+              </mat-card-header>
+            </mat-card>
+
+
+          </div>
+
+
+      </div>
+
+          <button (click)="salvadispositivi()">SALVA</button>
+
+        </div>
+    </div>
+  </div>
+</div>
+</div>
 
 

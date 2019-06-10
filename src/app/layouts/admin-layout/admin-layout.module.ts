@@ -19,17 +19,26 @@ import {
   MatRippleModule,
   MatFormFieldModule,
   MatTooltipModule,
-  MatSelectModule
+  MatSelectModule, MatCardModule
 } from '@angular/material';
 import {ListaUtentiComponent} from "../../lista-utenti/lista-utenti.component";
 import {AggiungiutenteComponent} from "../../aggiungiutente/aggiungiutente.component";
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {VgCoreModule} from "videogular2/core";
+import {VgOverlayPlayModule} from "videogular2/overlay-play";
+import {VgBufferingModule} from "videogular2/buffering";
+import {VgControlsModule} from "videogular2/controls";
+import {DataTableModule} from "angular7-data-table";
+import {MDBBootstrapModule} from "angular-bootstrap-md";
+import {ModificasequenzaComponent} from "../../modificasequenza/modificasequenza.component";
 
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
+    DataTableModule.forRoot(),
+    MDBBootstrapModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
@@ -38,7 +47,13 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
-    DragDropModule
+    DragDropModule,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule,
+    DragDropModule,
+    MatCardModule
   ],
   declarations: [
     DashboardComponent,
@@ -51,8 +66,10 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     UpgradeComponent,
     GestionevideoComponent,
     ListaUtentiComponent,
-    AggiungiutenteComponent
-  ]
+    AggiungiutenteComponent,
+    ModificasequenzaComponent
+  ],
+
 })
 
 export class AdminLayoutModule {}

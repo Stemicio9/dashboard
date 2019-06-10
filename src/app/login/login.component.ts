@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {ApiService} from "../services/api.service";
 import {HttpParams} from "@angular/common/http";
+import {MediaService} from "../services/media.service";
+
 
 @Component({
   selector: 'app-login',
@@ -13,12 +15,18 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   invalidLogin: boolean = false;
-  constructor(private formBuilder: FormBuilder, private router: Router, private apiService: ApiService) { }
+
+  constructor(private formBuilder: FormBuilder, private router: Router, private apiService: ApiService, private mediaService: MediaService) { }
 
   onSubmit() {
     if (this.loginForm.invalid) {
       return;
     }
+
+    this.mediaService.prenditutto();
+    this.router.navigate(['/admin/dashboard']);
+
+    /*
     const body = new HttpParams()
         .set('username', this.loginForm.controls.username.value)
         .set('password', this.loginForm.controls.password.value)
@@ -52,7 +60,7 @@ export class LoginComponent implements OnInit {
 //      this.router.navigate(['list-user']);
     }, error => {
       alert(error.error.error_description);
-    });
+    });  */
   }
 
   ngOnInit() {
@@ -64,6 +72,12 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.compose([Validators.required])],
       password: ['', Validators.required]
     });
+
+
+
+
+
+
   }
 
 }

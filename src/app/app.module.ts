@@ -20,6 +20,9 @@ import {DatoreLayoutComponent} from "./layouts/datore-layout/datore-layout.compo
 import {HttpClientModule} from "@angular/common/http";
 import { ListaUtentiComponent } from './lista-utenti/lista-utenti.component';
 import { AggiungiutenteComponent } from './aggiungiutente/aggiungiutente.component';
+import {APP_BASE_HREF, HashLocationStrategy, LocationStrategy} from "@angular/common";
+import {DataTableModule} from "angular7-data-table";
+import { ModificasequenzaComponent } from './modificasequenza/modificasequenza.component';
 
 
 @NgModule({
@@ -31,6 +34,7 @@ import { AggiungiutenteComponent } from './aggiungiutente/aggiungiutente.compone
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
@@ -43,7 +47,10 @@ import { AggiungiutenteComponent } from './aggiungiutente/aggiungiutente.compone
     LoginComponent
 
   ],
-  providers: [],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/' },
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
